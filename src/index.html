@@ -2,8 +2,16 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Это моя первая страница ...">
+	<meta name="author" content="Alexey">
+	<meta name="robots" content="all">
+
+	<meta property="og:title" content="Это моя первая страница ...">
+
 	<title>Алексей Гнездилов - Вэб-разработчик</title>
+
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -11,15 +19,15 @@
 	
 	<header>
 		<nav>
-			<div сlass="logo">Алексей Гнездилов</div>
+			<div class="logo">Алексей Гнездилов</div>
 			<div class="menu">
 				<ul>
-				<li>Обо мне</li>
-				<li>Услуги</li>
-				<li>Кейсы</li>
-				<li>Прайс</li>
-				<li>Отзывы</li>
-				<li>Контакты</li>
+					<li>Обо мне</li>
+					<li>Услуги</li>
+					<li>Кейсы</li>
+					<li>Прайс</li>
+					<li>Отзывы</li>
+					<li>Контакты</li>
 				</ul>
 			</div>
 		</nav>
@@ -38,50 +46,54 @@
 
 <!-- ----------------------------------------------------------------------------------------------------------- -->
 
-	<div class="2_page">
+	<div class="second_page">
 		<div class="about_myself">
 			<h3>ОБО МНЕ</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Quisquam ea, accusantium odio minus adipisci quidem aspernatur ipsa aliquid placeat dolor hic, iusto debitis, sequi provident cumque eos qui, amet dignissimos nesciunt alias.
-			</p>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo, vero aspernatur ad distinctio delectus, ducimus, excepturi ea exercitationem explicabo aliquam minus accusamus aliquid. Natus, facere officiis dignissimos veniam impedit eligendi optio.
-			</p>
+			<div class="text_about_me">
+				Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Quisquam ea, accusantium odio minus adipisci quidem aspernatur ipsa aliquid placeat dolor hic, iusto debitis, sequi provident cumque eos qui, amet dignissimos nesciunt alias.
+				<br><br><br>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo, vero aspernatur ad distinctio delectus, ducimus, excepturi ea exercitationem explicabo aliquam minus accusamus aliquid. Natus, facere officiis dignissimos veniam impedit eligendi optio.
+			</div>
 			<input type="submit" value="Скачать резюме">
 		</div>
 	</div>
 
 <!-- ----------------------------------------------------------------------------------------------------------- -->
 
-	<div class="3_page">
+	<div class="third_page">
 		<div class="what_can_i_do">
 			<h3>ЧТО Я УМЕЮ</h3>
 			<div class="skills">
 				<ul>
-					<li>Веб-дизайн <br>Lorem ipsum dolor sit, amet, consectetur adipisicing elit. Animi cum fugit iste magnam deleniti.</li>
-					<li>Разработка <br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, harum, necessitatibus! Velit.</li>
-					<li>CEO-Оптимизация <br>Lorem ipsum, dolor sit amet consectetur, adipisicing elit. Eveniet assumenda sapiente optio eius.</li>
-					<li>Маркетинг <br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus rem aliquam, atque non, alias explicabo!</li>
+					<li><h4>Веб-дизайн</h4><br>Lorem ipsum dolor sit amet <br>consectetur adipisicing, <br>elit. Aperiam, earum!</li>
+
+					<li><h4>Разработка</h4><br>Lorem ipsum dolor sit amet <br>consectetur adipisicing, <br>elit. Aperiam, earum!</li>
+
+					<li><h4>CEO-Оптимизация</h4><br>Lorem ipsum dolor sit amet <br>consectetur adipisicing, <br>elit. Aperiam, earum!</li>
+
+					<li><h4>Маркетинг</h4><br>Lorem ipsum dolor sit amet <br>consectetur adipisicing, <br>elit. Aperiam, earum!</li>
 				</ul>
-			</div>		
+			</div>	
 	    </div>
     </div>
 
 <!-- ----------------------------------------------------------------------------------------------------------- -->
 
-	<div class="4_page">
+	<div class="fourth_page">
 		<div class="cases">
 			<h3>КЕЙСЫ</h3>
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, culpa rem aliquam animi! Sint distinctio quasi, optio quos! Architecto, maiores.</p>
 			<div class="client_and_website">
 				<ul>
-					<li><b>CLIENT:</b><br>Какая-то компания</li>
-					<li><b>WEBSITE:</b><br>Какой-то сайт</li>
+					<li><b>CLIENT:</b><br><br>Какая-то компания<br><br><b>WEBSITE:</b><br><br>https://www.somedomain.com</li>
+			
+					<li><b>Название проекта</b><br>Lorem, ipsum, dolor sit amet <br>consectetur adipisicing elit. Voluptatibus deserunt, ipsam, minus fu.</li>
 				</ul>
 			</div>
 			<input type="submit" value="VISIT LIVE SITE">
-			<p><b>Название проекта</b><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum aspernatur itaque recusandae ea, soluta, nemo accusantium nam dolor impedit voluptates quibusdam, quia sint, nulla eum rem laboriosam earum exercitationem ad.</p>
 	    </div>
 
-	    <div classes="cost_calculation">
+	    <div class="cost_calculation">
 	    	<h3>Расчёт стоимости</h3>
 	    	<form action="a">
 	    		<div class="TypeDesignAdapt">
@@ -101,6 +113,9 @@
 								<option>Виберите пункт...</option>
 							</select>
 						</li>
+						<li>
+							<div id="just_line"></div>
+						</li>
 					</ul>
 				</div>
 			</form>
@@ -111,45 +126,67 @@
 					<li>Стоимость <input type="text"></li>
 				</ul>
 			</div>
+			<div class="full_cost">
+				<ul>
+					<li><input type="text" value="0"></li>
+					<li><input type="text" value="0"></li>
+				</ul>
+			</div>
 	    </div>
     </div>
 
 <!-- ----------------------------------------------------------------------------------------------------------- -->    
 
-    <div class="5_page">
+    <div class="fifth_page">
 		<div class="statistics">
 			<h3>НЕМНОГО СТАТИСТИКИ</h3>
 			<div class="statistica">
 				<ul>
-					<li><b>120</b><br>СЧАСТЛИВЫХ КЛИЕНТОВ</li>
-					<li><b>4.600</b><br>ЧАСОВ РАБОТЫ</li>
-					<li><b>340</b><br>ПРОЕКТОВ ЗАВЕРШЕНО</li>
-					<li><b>23</b><br>НАГРАД ПОЛУЧЕНО</li>
+					<li><img src="img/smile.png" alt=""><br><br><h4>120</h4><br>Счастливых клиентов</li>
+
+					<li><img src="img/skobki.png" alt=""><br><br><h4>4,600</h4><br>Часов работы</li>
+
+					<li><img src="img/galka.png" alt=""><br><br><h4>340</h4><br>Проектов завершено</li>
+
+					<li><img src="img/kubok.png" alt=""><br><br><h4>23</h4><br>Наград получено</li>
 				</ul>
-			</div>		
+			</div>	
 	    </div>
     </div>
 
 <!-- ----------------------------------------------------------------------------------------------------------- -->   
-    <div class="6_page">
+    <div class="sixth_page">
 		<div class="reviews">
 			<h3>ОТЗЫВЫ</h3>
-				
+
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At pariatur alias nisi doloribus saepe
+				omnis nemo quas molestiae mollitia repudiandae autem nihil sint cum natus officiis, maxime aut aliquam voluptatibus asperiores sunt minus. Minima alias vitae quisquam delectus accusantium, sapiente.
+				<br><br>
+				<b>Михаил,</b> Ген директор ПАО "Газпром"	
+			</p>
+
+			<ul>
+					<li><img src="img/ball1.png" alt=""></li>
+
+					<li><img src="img/ball2.png" alt=""></li>
+
+					<li><img src="img/ball2.png" alt=""></li>
+			</ul>
 	    </div>
     </div>
 
 <!-- ----------------------------------------------------------------------------------------------------------- -->
 
-    <div class="7_page">
+    <div class="seventh_page">
 		<div class="contacts">
 			<h3>МОИ КОНТАКТЫ</h3>
 			<p>Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Neque, similique? Cupiditate cumque incidunt fuga?
 			</p>
 			<div class="continform">
 				<ul>
-					<li>Санкт-Петербург Невский проспект 11</li>
-					<li>info@companyname.com</li>
-					<li>+79999999999</li>
+					<li><img src="img/geo.png" alt=""><br><br>Санкт-Петербург<br> Невский проспект 11</li>
+					<li><img src="img/convert.png" alt=""><br><br>info@companyname.com</li>
+					<li><img src="img/truba.png" alt=""><br><br>+79999999999</li>
 				</ul>
 			</div>
 			<h5>ОСТАВЬТЕ МНЕ СООБЩЕНИЕ</h5>	
@@ -161,12 +198,12 @@
 			</form>
 			<div class="socnet">
 				<ul>
-					<li>facebook</li>
-					<li>twitter</li>
-					<li>ball</li>
-					<li>cat</li>
-					<li>insta</li>
-					<li>in</li>
+					<li><img src="img/f.png" alt=""></li>
+					<li><img src="img/twit.png" alt=""></li>
+					<li><img src="img/myach.png" alt=""></li>
+					<li><img src="img/kisa.png" alt=""></li>
+					<li><img src="img/inst.png" alt=""></li>
+					<li><img src="img/in.png" alt=""></li>
 				</ul>
 			</div>
 	    </div>
@@ -174,12 +211,12 @@
 
 <!-- ----------------------------------------------------------------------------------------------------------- -->
 
-<div class="8_page">
-		<div class="maps">
-			<div>
+<div class="eight_page">
+		<div>
+			<div class="maps">
 				<!-- Здесь будут подключены карты -->
 			</div>
-			<div>
+			<div class="author">
 				Copyright&copy;2021 Алексей Гнездилов. Design by Web
 			</div>				
 	    </div>

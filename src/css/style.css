@@ -1,0 +1,435 @@
+body{
+	font-family: Arial, sans-serif;
+}
+
+
+/* Навигационная панель */
+
+nav{
+	width: 100%;
+	height: 60px;
+	background: #344051;
+}
+
+.logo{
+	color: #fff;
+	font-size: 28px;
+	line-height: 60px;
+	padding-left: 250px;
+	float: left;
+}
+
+.menu{
+	float: left;
+	padding-left: 300px;
+}
+
+.menu li{
+	float: left;
+	line-height: 60px;
+	color: #fff;
+	margin-right: 20px;
+	font-size: 16px;
+	text-transform: uppercase;
+}
+
+/*-----------------------------------*/
+
+/* Основная страница*/
+
+.main{
+	width: 100%;
+	height: calc(100% - 60px);
+	background: url(../img/man.png) 90% 100%/auto 95% no-repeat, 
+				url(../img/bg.jpg) no-repeat;
+}
+
+.title_container{
+	float: left;
+	margin: 220px 0px 8px 170px;
+	color: #2c384a;
+	text-align: center;
+}
+
+.title_container h1{
+	font-size: 60px;
+	font-weight: bold;
+}
+
+.title_container h4{
+	margin-top: 20px;
+	font-size: 20px;
+	color: #79818d;
+}
+
+.title_container input{
+	height: 40px;
+	text-align: center;
+	border: 2px solid #6d7682;
+	background: none;
+	border-radius: 5px;
+	color: #6d7682;
+	font-size: 13px;
+	padding: 0px 16px;
+	margin: 50px 14px 0px 14px;
+}
+
+/*-----------------------------------*/
+
+/* 2 страница - Обо мне*/
+
+.second_page{
+	width: 100%;
+	height: 850px;
+	background: url(../img/photo.png) 50% 40%/auto 30% no-repeat, 
+				url(../img/line.png) 50% 110px/110px 5px no-repeat;
+}
+
+.about_myself{
+	float: left;
+}
+
+.about_myself h3{
+	margin-top: 40px;
+	font-size: 40px;
+	font-weight: bold;
+	color: #263244;
+	text-align: center;
+}
+
+.text_about_me{
+	margin: 450px 250px 0px 320px;
+	font-size: 15px;
+	font-weight: bold;
+	color: #3f495a;
+	text-align: left;
+}
+
+.about_myself input{
+	height: 40px;
+	text-align: center;
+	border: 2px solid #6d7682;
+	background: none;
+	border-radius: 5px;
+	color: #6d7682;
+	font-size: 13px;
+	padding: 0px 16px;
+	margin: 50px 14px 0px 45%;
+}
+/*-----------------------------------*/
+
+/* 3 страница - Что я умею*/
+
+.third_page{
+	width: 100%;
+	height: 525px;
+	background: url(../img/line.png) 50% 110px/110px 5px no-repeat, 
+				url(../img/note.png) 15% 50%/55px 37px no-repeat, 
+				url(../img/sign.png) 39% 50%/55px 37px no-repeat,
+				url(../img/rocket.png) 62% 50%/55px 37px no-repeat,
+				url(../img/gram.png) 87% 50%/55px 37px no-repeat,
+				url(../img/fon.jpg) no-repeat;
+}
+
+.what_can_i_do h3{
+	padding-top: 40px;
+	font-weight: bold;
+	font-size: 40px;
+	color: #263244;
+	text-align: center;
+}
+
+.skills li{
+	float: left;
+	font-size: 15px;
+	margin: 225px 0px 0 130px;
+	text-align: center;
+}
+
+.skills h4{
+	color: #cf7600;
+	font-size: 20px;
+	font-weight: bold;
+}
+/*-----------------------------------*/
+
+/* 4 страница - Кейсы*/
+
+.fourth_page{
+	width: 100%;
+	height: 1800px;
+	background: url(../img/line.png) 50% 110px/110px 5px no-repeat,
+				url(../img/case.jpg) -50px 200px/1160px 790px no-repeat;
+}
+
+.cases h3{
+	padding-top: 40px;
+	font-size: 40px;
+	font-weight: bold;
+	color: #263244;
+	text-align: center;
+}
+
+.cases p{
+	text-align: center;
+	margin-top: 70px;
+	font-weight: bold;
+	color: #626976;
+}
+
+.client_and_website{
+	margin: 650px 0px 0px 240px;
+}
+
+.client_and_website li{
+	margin-top: 20px;
+	font-size: 20px;
+	float: left;
+	color: #636a76;
+}
+
+.client_and_website b{
+	color: #7d838c;
+}
+
+.cases input{
+	height: 60px;
+	width: 270px;
+	text-align: center;
+	background: #63b5ae;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 26px;
+	padding: 0px 16px;
+	margin: 200px 0px 0px -865px;
+}
+
+.cost_calculation h3{
+	margin-top: 100px;
+	font-size: 40px;
+	font-weight: bold;
+	color: #263244;
+	text-align: center;
+}
+
+.TypeDesignAdapt{
+	margin-top: 50px;
+	margin-left: 350px;
+}
+
+.TypeDesignAdapt li{
+	margin-top: 20px;
+	font-size: 20px;
+	color: #636a76;
+}
+
+.TypeDesignAdapt select{
+	margin-top: 20px;
+	width: 600px;
+	height: 50px;
+	background-color: #eeeeee;
+	color: #7d7d7d;
+	padding: .75rem 2.5rem .75rem 1rem;
+}
+
+#just_line{
+	margin-top: 25px;
+	width: 600px;
+	height: 2px;
+	background-color: #eeeeee;
+}
+
+.sroki_i_stoimost{
+	margin-top: 25px;
+	margin-left: 350px;
+}
+
+.sroki_i_stoimost li{
+	margin-top: 20px;
+	font-size: 15px;
+	font-weight: bold;
+	color: #1c2534;
+}
+
+.full_cost{
+	margin-top: -70px;
+	margin-left: 430px;
+}
+
+.full_cost input{
+	margin-top: 10px;
+	margin-left: 255px;
+	text-align: right;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+/*-----------------------------------*/
+
+/* 5 страница - Статистика*/
+.fifth_page{
+	width: 100%;
+	height: 525px;
+	background: url(../img/line.png) 50% 110px/110px 5px no-repeat, 
+				url(../img/secondfon.jpg) 50% no-repeat;
+}
+
+.statistics h3{
+	padding-top: 40px;
+	font-weight: bold;
+	font-size: 40px;
+	color: #263244;
+	text-align: center;
+}
+
+.statistica li{
+	float: left;
+	font-size: 15px;
+	margin: 150px 0px 0px 170px;
+	text-align: center;
+}
+
+.statistica h4{
+	color: #1c2534;
+	font-size: 40px;
+	font-weight: bold;
+}
+/*-----------------------------------*/
+
+/* 6  страница - Отзывы*/
+.sixth_page{
+	width: 100%;
+	height: 420px;
+	background: url(../img/fotka.png) 50% 40%/auto 30% no-repeat, 
+				url(../img/line.png) 50% 70px/110px 5px no-repeat;
+}
+
+.reviews h3{
+	margin-top: 40px;
+	font-size: 40px;
+	font-weight: bold;
+	color: #263244;
+	text-align: center;
+}
+
+.reviews p{
+	font-size: 15px;
+	text-align: center;
+	margin-top: 225px;
+	color: #243042;
+}
+
+.reviews ul{
+	margin-left: 47%;
+}
+
+.reviews li{
+	float: left;
+	margin: 30px 0px 0px 15px;
+}
+/*-----------------------------------*/
+
+/* 7 страница - Контакты*/
+.seventh_page{
+	width: 100%;
+	height: 808px;
+	background: url(../img/line.png) 50% 150px/100px 5px no-repeat,
+				url(../img/fon3.jpg) 50% 100%/auto 100% no-repeat;
+				
+}
+
+.contacts{
+	text-align: center;
+}
+
+.contacts h3{
+	padding-top: 80px;
+	font-weight: bold;
+	font-size: 40px;
+	color: #fff;
+	text-align: center;
+}
+
+.contacts p{
+	color: white;
+	text-align: center;
+	margin-top: 60px;
+}
+
+.continform ul{
+	margin-left: 10%;
+}
+.continform li{
+	float: left;
+	text-align: center;
+	margin: 40px 0px 0px 170px;
+	color: white;
+}
+
+.contacts h5{
+	color: #fff;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 150px;
+}
+
+.contacts input[type=text]{
+	height: 30px;
+	width: 370px;
+	background-color: #d3d6dc;
+	color: #676768;
+	font-size: 13px;
+	padding: 0px 16px;
+	margin: 50px 14px 0px 14px;
+}
+
+.contacts textarea{
+	height: 100px;
+	width: 772px;
+	background-color: #d3d6dc;
+	color: #676768;
+	font-size: 13px;
+	padding: 8px 0px 0px 16px;
+	margin: 10px 14px 0px 14px;
+}
+
+.contacts input[type=submit]{
+	height: 45px;
+	width: 125px;
+	margin-top: 20px;
+	text-align: center;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	font-size: 17px;
+	background: none;
+	color: #fff;
+}
+
+.socnet{
+	margin-top: 94px;
+	margin-left: 413px;
+}
+
+.socnet li{
+	float: left;
+	margin-left: 54px;
+}
+/*-----------------------------------*/
+
+/* 8 страница - Карты + Автор*/
+.maps{
+	width: 100%;
+	height: 500px;
+	background: url(../img/here.png) 73% 220px/100px 50px no-repeat,
+				url(../img/map.png) 0px 0px/2000px 100% no-repeat;			
+}
+ .author{  
+    width: 100%;
+	height: 70px;
+	background: #354051;
+	color: #fff;
+	line-height: 60px;
+	padding-left: 40%;
+}
+/*-----------------------------------*/
