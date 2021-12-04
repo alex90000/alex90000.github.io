@@ -5,221 +5,213 @@
 	<meta name="description" content="Это моя первая страница ...">
 	<meta name="author" content="Alexey">
 	<meta name="robots" content="all">
-
 	<meta property="og:title" content="Это моя первая страница ...">
-
 	<title>Алексей Гнездилов - Вэб-разработчик</title>
-
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/style.css">
+	<script>
+		window.onload = function() {document.querySelector('.loader').classList.add("preloader-remove");};
+	</script>
 </head>
 <body>
 
-<!-- ----------------------------------------------------------------------------------------------------------- -->	
+<!-- --------------------------------------- Прелоадер - загрузчик сайта -------------------------------------- -->	
+<div class="loader">
+	<div class="loader-inner">
+		<div class="loader-line-wrap">
+			<div class="loader-line"></div>
+		</div>
+		<div class="loader-line-wrap">
+			<div class="loader-line"></div>
+		</div>
+		<div class="loader-line-wrap">
+			<div class="loader-line"></div>
+		</div>
+		<div class="loader-line-wrap">
+			<div class="loader-line"></div>
+		</div>
+		<div class="loader-line-wrap">
+			<div class="loader-line"></div>
+		</div>
+	</div>
+</div>
+
+<!-- ---------------------------------------------------------------------------------------------------------- -->	
+
+<!-- ----------------------------------------Навигационная панель --------------------------------------------- -->	
 	
-	<header>
-		<nav>
-			<div class="logo">Алексей Гнездилов</div>
-			<div class="menu">
-				<ul>
-					<li>Обо мне</li>
-					<li>Услуги</li>
-					<li>Кейсы</li>
-					<li>Прайс</li>
-					<li>Отзывы</li>
-					<li>Контакты</li>
-				</ul>
-			</div>
-		</nav>
-	</header>
-
-<!-- ----------------------------------------------------------------------------------------------------------- -->
-
-	<div class="main">
-		<div class="title_container">
-			<h1>Привет <br> Я Алексей Гнездилов</h1>
-			<h4>Fullstuck и Android разработчик</h4>
-			<input type="submit" value="Обо мне">
-			<input type="submit" value="Мои работы">
-		</div>
-	</div>
-
-<!-- ----------------------------------------------------------------------------------------------------------- -->
-
-	<div class="second_page">
-		<div class="about_myself">
-			<h3>ОБО МНЕ</h3>
-			<div class="text_about_me">
-				Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Quisquam ea, accusantium odio minus adipisci quidem aspernatur ipsa aliquid placeat dolor hic, iusto debitis, sequi provident cumque eos qui, amet dignissimos nesciunt alias.
-				<br><br><br>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo, vero aspernatur ad distinctio delectus, ducimus, excepturi ea exercitationem explicabo aliquam minus accusamus aliquid. Natus, facere officiis dignissimos veniam impedit eligendi optio.
-			</div>
-			<input type="submit" value="Скачать резюме">
-		</div>
-	</div>
-
-<!-- ----------------------------------------------------------------------------------------------------------- -->
-
-	<div class="third_page">
-		<div class="what_can_i_do">
-			<h3>ЧТО Я УМЕЮ</h3>
-			<div class="skills">
-				<ul>
-					<li><h4>Веб-дизайн</h4><br>Lorem ipsum dolor sit amet <br>consectetur adipisicing, <br>elit. Aperiam, earum!</li>
-
-					<li><h4>Разработка</h4><br>Lorem ipsum dolor sit amet <br>consectetur adipisicing, <br>elit. Aperiam, earum!</li>
-
-					<li><h4>CEO-Оптимизация</h4><br>Lorem ipsum dolor sit amet <br>consectetur adipisicing, <br>elit. Aperiam, earum!</li>
-
-					<li><h4>Маркетинг</h4><br>Lorem ipsum dolor sit amet <br>consectetur adipisicing, <br>elit. Aperiam, earum!</li>
-				</ul>
-			</div>	
-	    </div>
-    </div>
-
-<!-- ----------------------------------------------------------------------------------------------------------- -->
-
-	<div class="fourth_page">
-		<div class="cases">
-			<h3>КЕЙСЫ</h3>
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, culpa rem aliquam animi! Sint distinctio quasi, optio quos! Architecto, maiores.</p>
-			<div class="client_and_website">
-				<ul>
-					<li><b>CLIENT:</b><br><br>Какая-то компания<br><br><b>WEBSITE:</b><br><br>https://www.somedomain.com</li>
-			
-					<li><b>Название проекта</b><br>Lorem, ipsum, dolor sit amet <br>consectetur adipisicing elit. Voluptatibus deserunt, ipsam, minus fu.</li>
-				</ul>
-			</div>
-			<input type="submit" value="VISIT LIVE SITE">
-	    </div>
-
-	    <div class="cost_calculation">
-	    	<h3>Расчёт стоимости</h3>
-	    	<form action="a">
-	    		<div class="TypeDesignAdapt">
-	    			<ul>
-						<li><b>ТИП САЙТА</b><br>
-							<select name="type" id="type1">
-								<option>Виберите пункт...</option>
-							</select>
-						</li>
-						<li><b>ДИЗАЙН</b><br>
-							<select name="design" id="design1">
-								<option>Виберите пункт...</option>
-							</select>
-						</li>
-						<li><b>АДАПТИВНОСТЬ</b><br>
-							<select name="adapt" id="adapt1">
-								<option>Виберите пункт...</option>
-							</select>
-						</li>
-						<li>
-							<div id="just_line"></div>
-						</li>
-					</ul>
-				</div>
-			</form>
-
-			<div class="sroki_i_stoimost">
-				<ul>
-					<li>Сроки <input type="text"></li>
-					<li>Стоимость <input type="text"></li>
-				</ul>
-			</div>
-			<div class="full_cost">
-				<ul>
-					<li><input type="text" value="0"></li>
-					<li><input type="text" value="0"></li>
-				</ul>
-			</div>
-	    </div>
-    </div>
-
-<!-- ----------------------------------------------------------------------------------------------------------- -->    
-
-    <div class="fifth_page">
-		<div class="statistics">
-			<h3>НЕМНОГО СТАТИСТИКИ</h3>
-			<div class="statistica">
-				<ul>
-					<li><img src="img/smile.png" alt=""><br><br><h4>120</h4><br>Счастливых клиентов</li>
-
-					<li><img src="img/skobki.png" alt=""><br><br><h4>4,600</h4><br>Часов работы</li>
-
-					<li><img src="img/galka.png" alt=""><br><br><h4>340</h4><br>Проектов завершено</li>
-
-					<li><img src="img/kubok.png" alt=""><br><br><h4>23</h4><br>Наград получено</li>
-				</ul>
-			</div>	
-	    </div>
-    </div>
-
-<!-- ----------------------------------------------------------------------------------------------------------- -->   
-    <div class="sixth_page">
-		<div class="reviews">
-			<h3>ОТЗЫВЫ</h3>
-
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At pariatur alias nisi doloribus saepe
-				omnis nemo quas molestiae mollitia repudiandae autem nihil sint cum natus officiis, maxime aut aliquam voluptatibus asperiores sunt minus. Minima alias vitae quisquam delectus accusantium, sapiente.
-				<br><br>
-				<b>Михаил,</b> Ген директор ПАО "Газпром"	
-			</p>
-
+<header>
+	<nav>
+		<div class="logo">Алексей Гнездилов</div>
+		<div class="menu">
 			<ul>
-					<li><img src="img/ball1.png" alt=""></li>
-
-					<li><img src="img/ball2.png" alt=""></li>
-
-					<li><img src="img/ball2.png" alt=""></li>
+				<li><a href="#">Обо мне</a></li>
+				<li><a href="#">Услуги</a></li>
+				<li><a href="#">Кейсы</a></li>
+				<li><a href="#">Прайс</a></li>
+				<li><a href="#">Отзывы</a></li>
+				<li><a href="#">Контакты</a></li>
 			</ul>
-	    </div>
-    </div>
+		</div>
+	</nav>
+</header>
 
-<!-- ----------------------------------------------------------------------------------------------------------- -->
+<main>
 
-    <div class="seventh_page">
-		<div class="contacts">
-			<h3>МОИ КОНТАКТЫ</h3>
-			<p>Lorem ipsum, dolor sit, amet consectetur adipisicing elit. Neque, similique? Cupiditate cumque incidunt fuga?
-			</p>
-			<div class="continform">
-				<ul>
-					<li><img src="img/geo.png" alt=""><br><br>Санкт-Петербург<br> Невский проспект 11</li>
-					<li><img src="img/convert.png" alt=""><br><br>info@companyname.com</li>
-					<li><img src="img/truba.png" alt=""><br><br>+79999999999</li>
-				</ul>
-			</div>
-			<h5>ОСТАВЬТЕ МНЕ СООБЩЕНИЕ</h5>	
-			<form action="a">
-				<input type="text" name="name" placeholder="Имя">
-				<input type="text" name="Email" placeholder="Email"><br>
-				<textarea name="message" id="1" cols="45" rows="10" placeholder="Сообщение"></textarea><br>
-				<input type="submit" value="Отправить">
-			</form>
-			<div class="socnet">
-				<ul>
-					<li><img src="img/f.png" alt=""></li>
-					<li><img src="img/twit.png" alt=""></li>
-					<li><img src="img/myach.png" alt=""></li>
-					<li><img src="img/kisa.png" alt=""></li>
-					<li><img src="img/inst.png" alt=""></li>
-					<li><img src="img/in.png" alt=""></li>
-				</ul>
-			</div>
-	    </div>
-    </div>
+<!-- ---------------------------------------- 1 страница - Представление --------------------------------------- -->
 
-<!-- ----------------------------------------------------------------------------------------------------------- -->
+<section class="main">
+	<div class="title_container">
+		<h1>Привет <br> Я Алексей Гнездилов</h1>
+		<h4>Fullstuck и Android разработчик</h4>
+		<input type="button" value="Обо мне">
+		<input type="button" value="Мои работы">
+	</div>
+</section>
 
-<div class="eight_page">
-		<div>
-			<div class="maps">
+<!-- ---------------------------------------- 2 страница - Обо мне --------------------------------------------- -->
+
+<section class="second_page">
+	<h3>ОБО МНЕ</h3>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Quisquam ea, accusantium odio minus adipisci quidem aspernatur ipsa aliquid placeat dolor hic, iusto debitis, sequi provident cumque eos qui, amet dignissimos nesciunt alias.
+		<br><br><br>
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo, vero aspernatur ad distinctio delectus, ducimus, excepturi ea exercitationem explicabo aliquam minus accusamus aliquid. Natus, facere officiis dignissimos veniam impedit eligendi optio.
+	</p>
+	<input type="button" value="Скачать резюме">
+</section>
+
+<!-- ---------------------------------------- 3 страница - Что я умею ------------------------------------------- -->
+
+<section class="third_page">
+	<h3>ЧТО Я УМЕЮ</h3>
+	<img class="poloska" src="img/line.png" alt=""> 
+	<ul>
+		<li><img src="img/note.png" alt=""><br><br><h4>Веб-дизайн</h4><br>Lorem ipsum dolor sit ametconsectetur<br> adipisicing, elit.<br> Aperiam, earum!</li>
+
+		<li><img src="img/sign.png" alt=""><br><br><h4>Разработка</h4><br>Lorem ipsum dolor sit amet consectetur<br> adipisicing elit. <br> Aperiam, earum!</li>
+
+		<li><img src="img/rocket.png" alt=""><br><br><h4>CEO-Оптимизация</h4><br>Lorem ipsum dolor sit amet consectetur<br> adipisicing, elit.<br> Aperiam, earum!</li>
+
+		<li><img src="img/gram.png" alt=""><br><br><h4>Маркетинг</h4><br>Lorem ipsum dolor sit ametconsectetur<br> adipisicing, elit. <br> Aperiam, earum!</li>
+	</ul>	
+</section>
+
+<!-- ---------------------------------------- 4 страница - Кейсы ------------------------------------------------ -->
+
+<section class="fourth_page">
+	<h3>КЕЙСЫ</h3>
+	<img class="poloska" src="img/line.png" alt="">
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, culpa rem aliquam animi! Sint distinctio quasi, optio quos! Architecto, maiores.
+	</p>
+	<ul>
+		<li>
+			<b>CLIENT:</b><br><br>Какая-то компания<br><br><b>WEBSITE:</b><br><br>https://www.somedomain.com
+		</li>
+		<li>
+			<b>Название проекта</b><br>Lorem, ipsum, dolor sit amet <br>consectetur adipisicing elit. Voluptatibus deserunt, ipsam, minus fu.<br><br><br><br><br><br><br>
+		</li>
+	</ul>
+	<input type="submit" value="VISIT LIVE SITE">
+	<h3>Расчёт стоимости</h3>
+	    <form action="a">
+	    	<ul>
+				<li><b>ТИП САЙТА</b><br>
+					<select name="type" id="type1">
+						<option>Виберите пункт...</option>
+					</select>
+				</li>
+				<li><b>ДИЗАЙН</b><br>
+					<select name="design" id="design1">
+						<option>Виберите пункт...</option>
+					</select>
+				</li>
+				<li><b>АДАПТИВНОСТЬ</b><br>
+					<select name="adapt" id="adapt1">
+						<option>Виберите пункт...</option>
+					</select>
+				</li>
+				<li><!--Просто линия--></li>
+			</ul>
+		</form>
+	<ul>
+		<li>Сроки</li>
+		<li>Стоимость</li>
+	</ul>
+	<ul>
+		<li>0</li>
+		<li>0</li>
+	</ul>
+</section>
+
+<!-- ------------------------------- 5 страница - Статистика  ------------------------------------------------- -->    
+
+<section class="fifth_page">
+	<h3>НЕМНОГО СТАТИСТИКИ</h3>
+	<img class="poloska" src="img/line.png" alt="">
+	<ul>
+		<li><img src="img/smile.png" alt=""><br><br><h4>120</h4><br>Счастливых клиентов</li>
+		<li><img src="img/skobki.png" alt=""><br><br><h4>4,600</h4><br>Часов работы</li>
+		<li><img src="img/galka.png" alt=""><br><br><h4>340</h4><br>Проектов завершено</li>
+		<li><img src="img/kubok.png" alt=""><br><br><h4>23</h4><br>Наград получено</li>
+	</ul>
+</section>
+
+<!-- -------------------------------  6 страница - Отзывы ------------------------------------------------------ -->   
+<section class="sixth_page">
+	<h3>ОТЗЫВЫ</h3>
+	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At pariatur alias nisi doloribus saepe
+		omnis nemo quas molestiae mollitia repudiandae autem nihil sint cum natus officiis, maxime aut aliquam voluptatibus asperiores sunt minus. Minima alias vitae quisquam delectus accusantium, sapiente.
+		<br><br>
+		<b>Михаил,</b> Ген директор ПАО "Газпром"	
+	</p>
+	<ul>
+		<li><img src="img/ball1.png" alt=""></li>
+		<li><img src="img/ball2.png" alt=""></li>
+		<li><img src="img/ball2.png" alt=""></li>
+	</ul>
+</section>
+
+<!-- ------------------------------- 7 страница - Контакты ------------------------------------------------------ -->
+
+<section class="seventh_page">
+	<h3>МОИ КОНТАКТЫ</h3>
+	<p>Lorem ipsum, sit, amet consectetur adipisicing elit. Neque, similique? Cupiditate cumque incidunt fuga?</p>
+	<ul>
+		<li><img src="img/geo.png" alt=""><br><br>Санкт-Петербург<br> Невский проспект 11</li>
+		<li><img src="img/convert.png" alt=""><br><br>info@companyname.com</li>
+		<li><img src="img/truba.png" alt=""><br><br>+79999999999</li>
+	</ul>
+	<h5>ОСТАВЬТЕ МНЕ СООБЩЕНИЕ</h5>	
+	<form action="a">
+		<input type="text" name="name" required placeholder="Имя">
+		<input type="email" name="Email" required placeholder="Email"><br>
+		<textarea name="message" id="1" cols="45" rows="10" required placeholder="Сообщение"></textarea><br>
+		<input type="submit" value="Отправить">
+	</form>
+	<ul>
+		<li><img src="img/f.png" alt=""></li>
+		<li><img src="img/twit.png" alt=""></li>
+		<li><img src="img/myach.png" alt=""></li>
+		<li><img src="img/kisa.png" alt=""></li>
+		<li><img src="img/inst.png" alt=""></li>
+		<li><img src="img/in.png" alt=""></li>
+	</ul>
+</section>
+
+<!-- ------------------------------ 8 страница - Карты ---------------------------------------------------------- -->
+
+<section class="eight_page">
+	<div>
+		<div class="maps">
 				<!-- Здесь будут подключены карты -->
-			</div>
-			<div class="author">
+		</div>
+		<div class="author">
 				Copyright&copy;2021 Алексей Гнездилов. Design by Web
-			</div>				
-	    </div>
-    </div>
+		</div>				
+	</div>
+</section>
+
+</main>
 </body>
 </html>
