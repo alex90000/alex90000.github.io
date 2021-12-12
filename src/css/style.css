@@ -480,7 +480,7 @@ nav{
 
 .fourth_page select{
 	margin: 10px 0 10px 0;
-	width: 600px;
+	width: 100%;
 	height: 50px;
 	background-color: #eeeeee;
 	color: #7d7d7d;
@@ -488,7 +488,7 @@ nav{
 }
 
 .just_line{/*Полоска внизу*/
-	width: 600px;
+	width: 100%;
 	height: 4px;
 	background-color: #eeeeee;
 }
