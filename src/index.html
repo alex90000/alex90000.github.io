@@ -8,14 +8,19 @@
 	<meta property="og:title" content="Это моя первая страница ...">
 	<title>Алексей Гнездилов - Вэб-разработчик</title>
 	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 	<script>
-		window.onload = function() {document.querySelector('.loader').classList.add("preloader-remove");};
+	window.onload = function() {document.querySelector('.loader').classList.add("preloader-remove");};
 	</script>
 </head>
 <body>
 
-<!-- --------------------------------------- Прелоадер - загрузчик сайта -------------------------------------- -->	
+<!-- --------------------------------------- Прелоадер - загрузчик сайта -------------------------------- -->	
 <div class="loader">
 	<div class="loader-inner">
 		<div class="loader-line-wrap">
@@ -36,57 +41,97 @@
 	</div>
 </div>
 
-<!-- ---------------------------------------------------------------------------------------------------------- -->	
+<!-- ---------------------------------------------------------------------------------------------------- -->	
 
-<!-- ----------------------------------------Навигационная панель --------------------------------------------- -->	
-	
+<!-- ----------------------------------------Навигационная панель --------------------------------------- -->		
 <header>
 	<nav>
-		<div class="logo">Алексей Гнездилов</div>
-		<div class="menu">
-			<ul>
-				<li><a href="#">Обо мне</a></li>
-				<li><a href="#">Услуги</a></li>
-				<li><a href="#">Кейсы</a></li>
-				<li><a href="#">Прайс</a></li>
-				<li><a href="#">Отзывы</a></li>
-				<li><a href="#">Контакты</a></li>
-			</ul>
+		<div class="container">
+			<div class="row">
+
+				<div class="col-xxl-2 col-lg-3 col-7">
+					<div class="logo">Алексей Браун</div>
+				</div>
+
+				<div class="px-0 col-xxl-6 col-xl-7 col-lg-8 offset-xxl-4 offset-xl-2 offset-lg-1 d-none d-lg-block">
+					<div class="menu">
+						<ul>
+							<li><a href="#">Обо мне</a></li>
+							<li><a href="#">Услуги</a></li>
+							<li><a href="#">Кейсы</a></li>
+							<li><a href="#">Прайс</a></li>
+							<li><a href="#">Отзывы</a></li>
+							<li><a href="#">Контакты</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-5 d-flex d-lg-none flex-column justify-content-center align-items-end">
+					<div class="dropdown">
+  						<a class="btn btn-outline-secondary dropdown-toggle white-btn" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+    										Навигация
+  						</a>
+						<ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+   							<li><a class="dropdown-item" href="#">Обо мне</a></li>
+    						<li><a class="dropdown-item" href="#">Услуги</a></li>
+    						<li><a class="dropdown-item" href="#">Кейсы</a></li>
+    						<li><a class="dropdown-item" href="#">Прайс</a></li>
+    						<li><a class="dropdown-item" href="#">Отзывы</a></li>
+    						<li><a class="dropdown-item" href="#">Контакты</a></li>
+ 						</ul>
+					</div>
+				</div>	
+
+			</div>
 		</div>
 	</nav>
 </header>
-
 <main>
 
-<!-- ---------------------------------------- 1 страница - Представление --------------------------------------- -->
+<!-- ----------- Контейнер-пустышка  - чтобы под навигацию фон не залазил-------------------------------- -->
+<section>
+	<div class="pustyshka"></div>
+</section>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
+<!-- ---------------------------------------- 1 страница - Представление -------------------------------- -->
 
 <section class="main">
-	<div class="title_container">
-		<h1>Привет <br> Я Алексей Гнездилов</h1>
-		<h4>Fullstuck и Android разработчик</h4>
-		<input type="button" value="Обо мне">
-		<input type="button" value="Мои работы">
+	<div class="container h-100">
+		<div class="row align-items-center h-100">
+			<div class="col-lg-6 mt-5 pt-5">
+				<div class="title_container mt-5">
+					<h1>Привет <br> Я Алексей Браун</h1>
+					<h4><i class="fa fa-css3 custom-css3"></i> Fullstuck и Android разработчик</h4>
+					<input type="button" value="Обо мне">
+					<input type="button" value="Мои работы">
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
 
-<!-- ---------------------------------------- 2 страница - Обо мне --------------------------------------------- -->
+<!-- ---------------------------------------- 2 страница - Обо мне -------------------------------------- -->
 
 <section class="second_page">
 	<h3>ОБО МНЕ</h3>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur, adipisicing elit. Quisquam ea, accusantium odio minus adipisci quidem aspernatur ipsa aliquid placeat dolor hic, iusto debitis, sequi provident cumque eos qui, amet dignissimos nesciunt alias.
-		<br><br><br>
-		Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure quo, vero aspernatur ad distinctio delectus, ducimus, excepturi ea exercitationem explicabo aliquam minus accusamus aliquid. Natus, facere officiis dignissimos veniam impedit eligendi optio.
+	<img class="poloska" src="img/line.png" alt=""><br><br><br>
+	<img src="img/photo.png" alt=""><br><br>
+	<p class="col-8 offset-2">
+			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, cupiditate est odio consectetur officiis ipsa facilis delectus eveniet dolorem magni blanditiis ab, ex ratione, nemo ullam doloremque voluptates reprehenderit deleniti.
+			<br><br>
+			Lorem ipsum dolor sit, amet consectetur, adipisicing elit. Laudantium in, omnis eveniet, praesentium dignissimos eos doloremque, beatae commodi nemo nobis quae perferendis inventore necessitatibus ullam consequuntur delectus vel sed fuga!
 	</p>
-	<input type="button" value="Скачать резюме">
+	<br>
+	<input class="col-2" type="button" value="Скачать резюме">
 </section>
 
-<!-- ---------------------------------------- 3 страница - Что я умею ------------------------------------------- -->
+<!-- ---------------------------------------- 3 страница - Что я умею ----------------------------------- -->
 
 <section class="third_page">
 	<h3>ЧТО Я УМЕЮ</h3>
 	<img class="poloska" src="img/line.png" alt=""> 
-	<ul>
+	<ul class="col-8 offset-2">
 		<li><img src="img/note.png" alt=""><br><br><h4>Веб-дизайн</h4><br>Lorem ipsum dolor sit ametconsectetur<br> adipisicing, elit.<br> Aperiam, earum!</li>
 
 		<li><img src="img/sign.png" alt=""><br><br><h4>Разработка</h4><br>Lorem ipsum dolor sit amet consectetur<br> adipisicing elit. <br> Aperiam, earum!</li>
@@ -97,69 +142,101 @@
 	</ul>	
 </section>
 
-<!-- ---------------------------------------- 4 страница - Кейсы ------------------------------------------------ -->
+<!-- ---------------------------------------- 4 страница - Кейсы ---------------------------------------- -->
 
 <section class="fourth_page">
-	<h3>КЕЙСЫ</h3>
-	<img class="poloska" src="img/line.png" alt="">
-	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, culpa rem aliquam animi! Sint distinctio quasi, optio quos! Architecto, maiores.
-	</p>
-	<ul>
-		<li>
-			<b>CLIENT:</b><br><br>Какая-то компания<br><br><b>WEBSITE:</b><br><br>https://www.somedomain.com
-		</li>
-		<li>
-			<b>Название проекта</b><br>Lorem, ipsum, dolor sit amet <br>consectetur adipisicing elit. Voluptatibus deserunt, ipsam, minus fu.<br><br><br><br><br><br><br>
-		</li>
-	</ul>
-	<input type="submit" value="VISIT LIVE SITE">
-	<h3>Расчёт стоимости</h3>
-	    <form action="a">
-	    	<ul>
-				<li><b>ТИП САЙТА</b><br>
-					<select name="type" id="type1">
-						<option>Виберите пункт...</option>
-					</select>
-				</li>
-				<li><b>ДИЗАЙН</b><br>
-					<select name="design" id="design1">
-						<option>Виберите пункт...</option>
-					</select>
-				</li>
-				<li><b>АДАПТИВНОСТЬ</b><br>
-					<select name="adapt" id="adapt1">
-						<option>Виберите пункт...</option>
-					</select>
-				</li>
-				<li><!--Просто линия--></li>
-			</ul>
-		</form>
-	<ul>
-		<li>Сроки</li>
-		<li>Стоимость</li>
-	</ul>
-	<ul>
-		<li>0</li>
-		<li>0</li>
-	</ul>
+	<div class="hat">
+		<h3>КЕЙСЫ</h3>
+		<img class="poloska" src="img/line.png" alt="">
+		<p class="col-8 offset-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, culpa rem aliquam animi!
+		</p><br>
+	</div>
+	
+	<div class="container"> 
+		<img class="col-8 offset-2" src="img/case.png" alt=""><br><br>
+    	<div class="row">  
+		    <div class="col-3 offset-2 fourthPagefirstlist">	
+				<b>CLIENT:</b>
+				<br>Какая-то компания<br>
+				<b>WEBSITE:</b>
+				<br>https://www.somedomain.com<br><br>
+				<input class="VISIT_LIVE_SITE" type="submit" value="Перейти на сайт">
+			</div>
+
+			<div class="col-5 fourthPagefirstlist">
+				<b>Название проекта</b><br>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur mai nam distinctio enim ut, corporis magni dicta autem doloremque ad qui sint officia blandit deleniti veritatis magnam ex eius 
+			</div>
+		</div>
+	</div>
+
+	<form class="col-6 offset-3" action="a">
+		<h3 align="center">Расчёт стоимости</h3><br>
+		<div>
+		    <b>ТИП САЙТА</b><br>
+			<select class="form-select" aria-label="Default select example">
+	  			<option selected>Выберите пункт ...</option>
+				<option value="1">One</option>
+				<option value="2">Two</option>
+				<option value="3">Three</option>
+			</select>
+					
+			<b>ДИЗАЙН</b>
+			<select class="form-select" aria-label="Default select example">
+	  			<option selected>Выберите пункт ...</option>
+				<option value="1">One</option>
+				<option value="2">Two</option>
+				<option value="3">Three</option>
+			</select>
+					
+			<b>АДАПТИВНОСТЬ</b>
+			<select class="form-select" aria-label="Default select example">
+	  			<option selected>Выберите пункт ...</option>
+				<option value="1">One</option>
+				<option value="2">Two</option>
+				<option value="3">Three</option>
+			</select>
+			<br>
+			<div class="just_line"></div> <!-- Просто линия  -->
+			<br>
+			<div class="block">
+				<div class="roww">
+					<div class="coll"><b>Сроки</b></div>
+					<div class="coll"><b>0</b></div>
+				</div> 
+			</div>
+			<div class="block">
+				<div class="roww">
+					<div class="coll"><b>Стоимость</b></div>
+					<div class="coll"><b>0</b></div>
+				</div> 
+			</div>
+			<br>
+			<div align="center">
+				<input class="VISIT_LIVE_SITE" type="button" value="Оставить заявку">
+			</div>
+		</div>
+	</form>
+
 </section>
 
-<!-- ------------------------------- 5 страница - Статистика  ------------------------------------------------- -->    
-
+<!-- ------------------------------- 5 страница - Статистика  ------------------------------------------- -->    
 <section class="fifth_page">
 	<h3>НЕМНОГО СТАТИСТИКИ</h3>
 	<img class="poloska" src="img/line.png" alt="">
 	<ul>
-		<li><img src="img/smile.png" alt=""><br><br><h4>120</h4><br>Счастливых клиентов</li>
-		<li><img src="img/skobki.png" alt=""><br><br><h4>4,600</h4><br>Часов работы</li>
-		<li><img src="img/galka.png" alt=""><br><br><h4>340</h4><br>Проектов завершено</li>
-		<li><img src="img/kubok.png" alt=""><br><br><h4>23</h4><br>Наград получено</li>
+		<li><img src="img/smile.png" alt=""><br><h4>120</h4>Счастливых клиентов</li>
+		<li><img src="img/skobki.png" alt=""><br><h4>4,600</h4>Часов работы</li>
+		<li><img src="img/galka.png" alt=""><br><h4>340</h4>Проектов завершено</li>
+		<li><img src="img/kubok.png" alt=""><br><h4>23</h4>Наград получено</li>
 	</ul>
 </section>
 
-<!-- -------------------------------  6 страница - Отзывы ------------------------------------------------------ -->   
+<!-- -------------------------------  6 страница - Отзывы ----------------------------------------------- -->   
 <section class="sixth_page">
 	<h3>ОТЗЫВЫ</h3>
+	<img class="poloska" src="img/line.png" alt=""><br><br><br>
+	<img src="img/fotka.png" alt="">
 	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At pariatur alias nisi doloribus saepe
 		omnis nemo quas molestiae mollitia repudiandae autem nihil sint cum natus officiis, maxime aut aliquam voluptatibus asperiores sunt minus. Minima alias vitae quisquam delectus accusantium, sapiente.
 		<br><br>
@@ -172,24 +249,26 @@
 	</ul>
 </section>
 
-<!-- ------------------------------- 7 страница - Контакты ------------------------------------------------------ -->
+<!-- ------------------------------- 7 страница - Контакты ---------------------------------------------- -->
 
 <section class="seventh_page">
 	<h3>МОИ КОНТАКТЫ</h3>
+	<img class="poloska" src="img/line.png" alt=""><br>
 	<p>Lorem ipsum, sit, amet consectetur adipisicing elit. Neque, similique? Cupiditate cumque incidunt fuga?</p>
-	<ul>
+	<ul class="seventhPageFirstList">
 		<li><img src="img/geo.png" alt=""><br><br>Санкт-Петербург<br> Невский проспект 11</li>
 		<li><img src="img/convert.png" alt=""><br><br>info@companyname.com</li>
 		<li><img src="img/truba.png" alt=""><br><br>+79999999999</li>
 	</ul>
+
 	<h5>ОСТАВЬТЕ МНЕ СООБЩЕНИЕ</h5>	
-	<form action="a">
+	
 		<input type="text" name="name" required placeholder="Имя">
 		<input type="email" name="Email" required placeholder="Email"><br>
 		<textarea name="message" id="1" cols="45" rows="10" required placeholder="Сообщение"></textarea><br>
 		<input type="submit" value="Отправить">
-	</form>
-	<ul>
+	
+	<ul class="seventhPageSecondList">
 		<li><img src="img/f.png" alt=""></li>
 		<li><img src="img/twit.png" alt=""></li>
 		<li><img src="img/myach.png" alt=""></li>
@@ -199,7 +278,7 @@
 	</ul>
 </section>
 
-<!-- ------------------------------ 8 страница - Карты ---------------------------------------------------------- -->
+<!-- ------------------------------ 8 страница - Карты -------------------------------------------------- -->
 
 <section class="eight_page">
 	<div>
@@ -212,6 +291,8 @@
 	</div>
 </section>
 
+<!-- --------------------------------------------------------------------------------------------------- -->
 </main>
+<script src="js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,3 +1,13 @@
+@font-face {
+	font-family: 'FranklinGot';
+	src: url('../fonts/framd.eot');
+	src: local('☺'), url('../fonts/framd.woff') format('woff'), 
+					 url('../fonts/framd.ttf') format('truetype'), 
+					 url('../fonts/framd.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
 body{
 	font-family: Arial, sans-serif;
 }
@@ -8,10 +18,11 @@ main{
 }
 
 .poloska{/* Класс для оранжевой полоски на страницах с параллакс эффектом*/
-	width: 110px;
-	height: 5px;
-	margin-top: 55px;
+	width: 55px;
+	height: 2px;
 }
+
+/*--------------------------------------------------------------------------------*/
 
 /* Прелоадер - загрузчик сайта*/
 .loader {
@@ -122,20 +133,24 @@ nav{
 	height: 60px;
 	background: #344051;
 	position: fixed;
+	z-index: 10;
+}
+
+.white-btn:visited{
+	color: white;
 }
 
 .logo{
+	font-family: 'FranklinGot';
 	color: #fff;
-	font-size: 28px;
+	font-size: 25px;
 	line-height: 60px;
-	padding-left: 250px;
 	float: left;
 	animation: coming 4s ease;
 }
 
 .menu{
 	float: left;
-	padding-left: 300px;
 }
 
 .menu li{
@@ -143,7 +158,7 @@ nav{
 	line-height: 60px;
 	color: #fff;
 	margin-right: 20px;
-	font-size: 16px;
+	font-size: 14px;
 	text-transform: uppercase;
 	animation: topshift 0.4s ease forwards;
 	opacity: 0;
@@ -174,6 +189,7 @@ nav{
 	color: white;
 	transition: all 0.5s;
 	transform: scale(1);
+	text-decoration: none;
 }
 
 .menu li a:visited{
@@ -212,27 +228,37 @@ nav{
 
 /*-----------------------------------*/
 
-/* Основная страница*/
+/*Контейнер-пустышка, чтобы фон не залазил под nav*/
 
-.main{
+.pustyshka{
 	width: 100%;
-	height: 100%;
-	background: url(../img/man.png) 90% 100%/auto 80% no-repeat, 
-				url(../img/bg.jpg) no-repeat;
+	height: 60px;
+}
+
+/*------------------------------------*/
+
+/* 1 страница - Представление*/
+
+.main{ 
+	width: 100%;
+	height: 700px;
+	background: url(../img/man.png) 90% 100%/auto 90% no-repeat, 
+				url(../img/bg.jpg) 0 0/cover no-repeat;
 }
 
 .title_container{
 	float: left;
-	margin: 220px 0px 8px 170px;
 	color: #2c384a;
 	text-align: center;
+	width: 100%;
 	opacity: 0;
 	animation: titlemove 1s ease forwards;
 	animation-delay: 3s;
 }
 
 .title_container h1{
-	font-size: 60px;
+	font-family: Arial, sans-serif;
+	font-size: 65px;
 	font-weight: bold;
 }
 
@@ -268,6 +294,10 @@ nav{
 	transform: scale(1.5);
 }
 
+.custom-css3{
+	font-size: 40px;
+}
+
 @keyframes titlemove{
 	from{
 		opacity: 0;
@@ -276,7 +306,33 @@ nav{
 
 	to{
 		opacity: 1;
-		margin-left: 170px;
+		margin-left: 0%;
+	}
+}
+
+@media (max-width: 990px){
+	.title_container, .title_container h4, .title_container input{
+		color: white;
+		position: relative;
+		z-index: 3;
+	}
+
+	.title_container input{
+		border: 2px solid white;
+	}
+
+	.main{
+		position: relative;
+	}
+
+	.main::after {
+		content: "";
+		bottom: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		position: absolute;
+		background: rgba(0,0,0,0.4); 
 	}
 }
 
@@ -286,29 +342,23 @@ nav{
 
 .second_page{
 	width: 100%;
-	height: 850px;
-	background: url(../img/photo.png) 50% 30%/auto 30% no-repeat, 
-				url(../img/line.png) 50% 110px/110px 5px no-repeat;
-}
-
-.second_page h3{
-	margin-top: 40px;
-	font-size: 40px;
-	font-weight: bold;
-	color: #263244;
+	height: 550px;
 	text-align: center;
 }
 
-.second_page p{
-	margin: 450px 250px 0px 320px;
-	font-size: 15px;
+.second_page h3{ /*Заголовок "Обо мне"*/
+	margin-top: 80px;
+	font-weight: bold;
+	color: #263244;
+}
+
+.second_page p{ /*Текст-рыба*/
 	font-weight: bold;
 	color: #3f495a;
 	text-align: left;
 }
 
 .second_page input{/*Кнопка скачать резюме*/
-	height: 40px;
 	text-align: center;
 	border: 2px solid #6d7682;
 	background: none;
@@ -316,7 +366,6 @@ nav{
 	color: #6d7682;
 	font-size: 13px;
 	padding: 0px 16px;
-	margin: 50px 14px 0px 45%;
 	transition: all 0.5s;
 	box-shadow: 5px 5px 0 #000;
 }
@@ -338,32 +387,35 @@ nav{
 
 .third_page{
 	width: 100%;
-	height: 525px;
-	background: url(../img/fon.jpg) no-repeat;
-	background-attachment: fixed;
+	height: 500px;
+	background: url(../img/fon.jpg) 0 0/100% 100% no-repeat;
+	/*background-attachment: fixed;*/
 	text-align: center;
 }
 
-.third_page h3{
-	padding-top: 40px;
+.third_page h3{ /*Заголовок "Что я умею*/
+	padding-top: 80px;
 	font-weight: bold;
-	font-size: 40px;
 	color: #263244;
+}
+
+.third_page img{
+    transition: 1s; /* Время анимации */
+}
+
+.third_page ul{
+	margin-top: 100px;
+	display: flex;
 }
 
 .third_page li{
 	float: left;
 	font-size: 15px;
-	margin: 100px 0px 0px 60px;
 }
-
-.third_page img{
-    transition: 1s; /* Время анимации */
-   }
 
 .third_page h4{
 	color: #cf7600;
-	font-size: 20px;
+	font-size: 15px;
 	font-weight: bold;
 }
 
@@ -376,80 +428,58 @@ nav{
 
 .fourth_page{
 	width: 100%;
-	height: 1800px;
-	background: url(../img/case.jpg) -50px 200px/1160px 790px no-repeat;
+	height: 1500px;
+}
+
+.hat{
 	text-align: center;
 }
 
-.fourth_page h3:nth-of-type(1){/*Кейсы*/
-	margin-top: 40px;
-	font-size: 40px;
+.hat h3{
+	margin-top: 80px;
 	font-weight: bold;
-	color: #263244;
 }
 
 .fourth_page p{/*Текст-рыба*/
-	margin-top: 40px;
+	margin-top: 10px;
 	font-weight: bold;
 	color: #626976;
 }
 
-.fourth_page ul:nth-of-type(1){/*1 список, где клиент и вебсайт*/
-	max-width: 65%;
-	max-height: 140px;
-	margin: 625px auto;
-	text-align: left;
+.fourthPagefirstlist{
+	color: #38485a;
 }
 
-.fourth_page ul:nth-of-type(1) li{/*Элементы 1 списка*/
-	margin-top: 20px;
+.fourthPagefirstlist b{
 	font-size: 20px;
-	float: left;
-	color: #636a76;
 }
 
-
-.fourth_page ul:nth-of-type(1) li b{/*Текст в элементах 1 списка*/
-	color: #7d838c;
-}
-
-.fourth_page input:nth-of-type(1){/*Кнопка VISIT LIVESITE*/
-	width: 270px;
-	height: 45px;
-	display: block;
-	margin-left: 235px;
+.VISIT_LIVE_SITE{/*Кнопка VISIT LIVESITE*/
+	width: 200px;
+	height: 40px;
 	text-align: center;
 	background: #63b5ae;
 	border-radius: 5px;
 	color: #fff;
-	font-size: 26px;
+	font-size: 15px;
 	padding: 0px 16px;
 	transition: all 0.5s;
 	box-shadow: 5px 5px 0 #000;
 }
 
-.fourth_page h3:nth-of-type(2){/*Расчёт стоимости*/
+.fourth_page form{
 	margin-top: 100px;
-	font-size: 40px;
+	height: 600px;
+	padding: 50px 35px;
+	border: 2px solid #eeeeee;
+}
+
+.fourth_page form h3{
 	font-weight: bold;
-	color: #263244;
-	text-align: center;
 }
 
-.fourth_page form:nth-of-type(1) ul{/* 2 список, где расчёт стоимости*/
-	max-width: 40%;
-	max-height: 140px;
-	margin: 50px auto;
-}
-
-.fourth_page form:nth-of-type(1) ul li{/*Элементы 2 списка*/
-	margin-top: 20px;
-	font-size: 20px;
-	color: #636a76;
-}
-
-.fourth_page form:nth-of-type(1) select{
-	margin-top: 20px;
+.fourth_page select{
+	margin: 10px 0 10px 0;
 	width: 600px;
 	height: 50px;
 	background-color: #eeeeee;
@@ -457,39 +487,22 @@ nav{
 	padding: .75rem 2.5rem .75rem 1rem;
 }
 
-.fourth_page form:nth-of-type(1) li:nth-child(4){/*Полоска внизу*/
-	margin-top: 25px;
+.just_line{/*Полоска внизу*/
 	width: 600px;
-	height: 3px;
+	height: 4px;
 	background-color: #eeeeee;
 }
 
-.fourth_page ul:nth-of-type(2){/*3 список*/
-	width: 1%;
-	margin: 450px 0px 0px 405px;
+.fourth_page .roww{
+	display: flex;
+	justify-content: space-between;
 }
 
-.fourth_page ul:nth-of-type(2) li{/*лементы 3 списка*/
-	margin-top: 20px;
-	font-size: 15px;
-	font-weight: bold;
-	color: #1c2534;
-	text-align: left;
+.fourth_page input[type=button]{
+	text-align: center;
 }
 
-.fourth_page ul:nth-of-type(3){/*4 список*/
-	width: 1%;
-	margin: -70px 0px 0px 1000px;
-}
-
-.fourth_page ul:nth-of-type(3) li{/*Элементы 4 списка*/
-	margin-top: 20px;
-	font-size: 15px;
-	font-weight: bold;
-	color: #1c2534;
-}
-
-.fourth_page input:nth-of-type(1):hover{
+.fourth_page input:hover{
 	background: orange;
 	color: white;
 	left: 5px;
@@ -497,7 +510,7 @@ nav{
     box-shadow: 0 0 0 #000;
 }
 
-.fourth_page input:nth-of-type(1):active{
+.fourth_page input:active{
 	transform: scale(1.5);
 }
 
@@ -506,23 +519,27 @@ nav{
 /* 5 страница - Статистика*/
 .fifth_page{
 	width: 100%;
-	height: 525px;
-	background: url(../img/secondfon.jpg) 50% no-repeat;
-	background-attachment: fixed;
+	height: 400px;
+	background: url(../img/secondfon.jpg) 0 0/100% 100% no-repeat;
+	/*background-attachment: fixed;*/
 	text-align: center;
 }
 
 .fifth_page h3{
-	padding-top: 40px;
+	padding-top: 80px;
 	font-weight: bold;
-	font-size: 40px;
 	color: #263244;
+}
+
+.fifth_page ul{
+	margin-top: 5%;
+	display: flex;
+	justify-content: space-around;
 }
 
 .fifth_page li{
 	float: left;
 	font-size: 15px;
-	margin: 150px 0px 0px 170px;
 }
 
 .fifth_page h4{
@@ -536,27 +553,23 @@ nav{
 .sixth_page{
 	width: 100%;
 	height: 420px;
-	background: url(../img/fotka.png) 50% 40%/auto 30% no-repeat, 
-				url(../img/line.png) 50% 70px/110px 5px no-repeat;
+	text-align: center;
 }
 
 .sixth_page h3{
-	margin-top: 40px;
-	font-size: 40px;
+	margin-top: 80px;
 	font-weight: bold;
 	color: #263244;
-	text-align: center;
 }
 
 .sixth_page p{
 	font-size: 15px;
 	text-align: center;
-	margin-top: 225px;
 	color: #243042;
 }
 
 .sixth_page ul{
-	max-width: 6%;
+	max-width: 10%;
 	margin: 0 auto;
 }
 
@@ -569,32 +582,29 @@ nav{
 /* 7 страница - Контакты*/
 .seventh_page{
 	width: 100%;
-	height: 808px;
-	background: url(../img/line.png) 50% 150px/100px 5px no-repeat,
-				url(../img/fon3.jpg) 50% 100%/auto 100% no-repeat;
+	height: 800px;
+	background: url(../img/fon3.jpg) 0 0/100% 100% no-repeat;
 	text-align: center;
 }
 
 .seventh_page h3{/*Мои контакты*/
 	padding-top: 80px;
 	font-weight: bold;
-	font-size: 40px;
 	color: #fff;
 }
 
 .seventh_page p{/*Текст-рыба*/
 	color: white;
-	margin-top: 60px;
+	margin-top: 40px;
 }
 
-.seventh_page ul:nth-of-type(1){/*1 список - Санкт-Петербург Невский проспект 11*/
-	max-width: 80%;
-	margin: 50px auto;
+.seventhPageFirstList{/*1 список - Санкт-Петербург Невский проспект 11*/
+	display: flex;
+	justify-content: space-around;
 }
 
-.seventh_page ul:nth-of-type(1) li{/*Элементы 1ого списка*/
-	margin-left: 170px;
-	float: left;
+.seventhPageFirstList li{/*Элементы 1ого списка*/
+	float:left;
 	color: white;
 }
 
@@ -604,7 +614,6 @@ nav{
 	font-weight: bold;
 	font-size: 20px;
 	text-align: center;
-	margin-top: 150px;
 }
 
 .seventh_page input[type=text]{/*Поле для ввода имени*/
@@ -651,12 +660,12 @@ nav{
 	box-shadow: 5px 5px 0 #000;
 }
 
-.seventh_page ul:nth-of-type(2){/*2 список - Соцсети*/
-	margin: 94px 0px 0px 413px;
+.seventhPageSecondList{/*2 список - Соцсети*/
+	margin: 100px 0px 0px 470px;
 }
 
-.seventh_page ul:nth-of-type(2) li{/*Элементы 2ого списка*/
-	margin-left: 54px;
+.seventhPageSecondList li{/*Элементы 2ого списка*/
+	margin-left: 30px;
 	float: left;
 }
 
