@@ -599,12 +599,12 @@ nav{
 }
 
 .seventhPageFirstList{/*1 список - Санкт-Петербург Невский проспект 11*/
+	padding: 0px 260px 0px 220px;
 	display: flex;
 	justify-content: space-around;
 }
 
 .seventhPageFirstList li{/*Элементы 1ого списка*/
-	float:left;
 	color: white;
 }
 
@@ -613,7 +613,6 @@ nav{
 	color: #fff;
 	font-weight: bold;
 	font-size: 20px;
-	text-align: center;
 }
 
 .seventh_page input[type=text]{/*Поле для ввода имени*/
