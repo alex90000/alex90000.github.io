@@ -202,6 +202,7 @@ nav{
 
 .menu li a:active{
 	transform: scale(1.7);
+	color: red;
 }
 
 @keyframes coming{

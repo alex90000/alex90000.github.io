@@ -1,8 +1,33 @@
 "use strict"
 
-let totalArray = []; //итоговый массив
-let totalCost = 0;
-let totalDays = 0;
+$(document).ready(function(){
+
+	$(window).scroll(() => { 
+
+		let scrollDistance = $(window).scrollTop();
+
+		$("section").each((i, el) => {
+
+			if($(el).offset().top - $("nav").outerHeight() <= scrollDistance) {
+
+				$("nav a").each((i, el) => {
+
+					if($(el).hasClass("active")){
+
+						$(el).removeClass("active");
+						console.log("BEBEBEBEBE");
+					}
+				});
+
+				$('nav li:eq(' + i + ')').find('a').addClass('active');
+			}
+		});
+	});
+});
+
+/*let totalArray = []; // итоговый массив с типом сайта, дизайна и адаптивности
+let totalCost = 0;   // итоговая стоимость
+let totalDays = 0;   // итоговый срок
 
 
 // 1 окошко с запросом типа сайта
@@ -80,10 +105,21 @@ do{
 }while(true);
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Подсчёт итоговой стоимости и итогового срока
+
 totalCost = totalArray[0].cost + totalArray[1].cost + totalArray[2].cost;
 totalDays = totalArray[0].days + totalArray[1].days + totalArray[2].days;
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 alert(`Вы выбрали: \nТипа сайта - ${totalArray[0].name}\nДизайн сайта - ${totalArray[1].name}\nАдаптивность - ${totalArray[2].name}\n\nСтоимость - ${totalCost} рублей\nСрок - около ${totalDays} дней`);
-///////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-console.log(totalArray);
+*/
+
+
+
+$('a[href^="#"]').click(function(){
+	let valHref = $(this).attr("href");
+	$('html, body').animate({scrollTop: $(valHref).offset().top - 60 + "px"});
+});
