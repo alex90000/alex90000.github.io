@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@700&display=swap" rel="stylesheet">
@@ -57,10 +59,12 @@
 				<div class="px-0 col-xxl-6 col-xl-7 col-lg-8 offset-xxl-4 offset-xl-2 offset-lg-1 d-none d-lg-block">
 					<div class="menu">
 						<ul>
+							<li><a href="#main">Главная</a></li>
 							<li><a href="#about_me">Обо мне</a></li>
 							<li><a href="#services">Услуги</a></li>
 							<li><a href="#cases">Кейсы</a></li>
 							<li><a href="#prices">Прайс</a></li>
+							<li><a href="#statistic">Статистика</a></li>
 							<li><a href="#feedback">Отзывы</a></li>
 							<li><a href="#contacts">Контакты</a></li>
 						</ul>
@@ -89,6 +93,21 @@
 </header>
 <main>
 
+<!-- ----------- Всплывающее модальное окно ------------------------------------------------------------- -->
+<div id="overlay">
+    <div class="popup">
+        <h2>ПОЛУЧИ СКИДКУ НА ПЕРВЫЙ ЗАКАЗ !!!</h2>
+        
+        <input type="text" name="name" required placeholder="Имя"><br>
+		<input type="email" name="Email" required placeholder="Email"><br>
+		<input type="submit" value="Отправить" onclick="document.getElementById('overlay').style.display='none';">
+        <button class="close" title="Закрыть" onclick="document.getElementById('overlay').style.display='none';">
+        	
+        </button>
+    </div>
+</div>
+<!-- ---------------------------------------------------------------------------------------------------- -->
+
 <!-- ----------- Контейнер-пустышка  - чтобы под навигацию фон не залазил-------------------------------- -->
 <section>
 	<div class="pustyshka"></div>
@@ -97,11 +116,11 @@
 
 <!-- ---------------------------------------- 1 страница - Представление -------------------------------- -->
 
-<section class="main">
+<section class="main section" id="main">
 	<div class="container h-100">
 		<div class="row align-items-center h-100">
 			<div class="col-lg-6 mt-5 pt-5">
-				<div class="title_container mt-5">
+				<div class="title_container element_animation mt-5">
 					<h1>Привет <br> Я Алексей Браун</h1>
 					<h4><i class="fa fa-css3 custom-css3"></i> Fullstuck и Android разработчик</h4>
 					<input type="button" value="Обо мне">
@@ -114,10 +133,10 @@
 
 <!-- ---------------------------------------- 2 страница - Обо мне -------------------------------------- -->
 
-<section class="second_page" id="about_me">
+<section class="second_page section" id="about_me">
 	<h3>ОБО МНЕ</h3>
 	<img class="poloska" src="img/line.png" alt=""><br><br><br>
-	<img src="img/photo.png" alt=""><br><br>
+	<img class="otl_zagr" src="" data-src="img/photo.png" alt=""><br><br>
 	<p class="col-8 offset-2">
 			Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam, cupiditate est odio consectetur officiis ipsa facilis delectus eveniet dolorem magni blanditiis ab, ex ratione, nemo ullam doloremque voluptates reprehenderit deleniti.
 			<br><br>
@@ -129,7 +148,7 @@
 
 <!-- ---------------------------------------- 3 страница - Что я умею ----------------------------------- -->
 
-<section class="third_page" id="services">
+<section class="third_page section" id="services">
 	<h3>ЧТО Я УМЕЮ</h3>
 	<img class="poloska" src="img/line.png" alt=""> 
 	<ul class="col-8 offset-2">
@@ -145,7 +164,7 @@
 
 <!-- ---------------------------------------- 4 страница - Кейсы ---------------------------------------- -->
 
-<section class="fourth_page" id="cases">
+<section class="fourth_page section" id="cases">
 	<div class="hat">
 		<h3>КЕЙСЫ</h3>
 		<img class="poloska" src="img/line.png" alt="">
@@ -154,7 +173,33 @@
 	</div>
 	
 	<div class="container"> 
-		<img class="col-8 offset-2" src="img/case.png" alt=""><br><br>
+		<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+  			<div class="carousel-indicators">
+    			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    			<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  			</div>
+  			<div class="carousel-inner">
+    			<div class="carousel-item active">
+     				 <img src="img/case.png" href="img/case.png" class="d-block mx-auto image-link" alt="...">
+    			</div>
+    			<div class="carousel-item">
+     				 <img src="img/case.png" href="img/case.png" class="d-block mx-auto image-link" alt="...">
+    			</div>
+    			<div class="carousel-item">
+      				 <img src="img/case.png" href="img/case.png" class="d-block mx-auto image-link" alt="...">
+    			</div>
+  			</div>
+  			<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    			<span class="visually-hidden">Previous</span>
+  			</button>
+  			<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+    			<span class="visually-hidden">Next</span>
+  			</button>
+		</div>
+		<br><br>
     	<div class="row">  
 		    <div class="col-3 offset-2 fourthPagefirstlist">	
 				<b>CLIENT:</b>
@@ -171,88 +216,120 @@
 		</div>
 	</div>
 
-	<form class="col-6 offset-3" action="a" id="prices">
+	<form class="myForm col-6 offset-3 section" action="a" id="prices">
 		<h3 align="center">Расчёт стоимости</h3><br>
 		<div>
 		    <b>ТИП САЙТА</b><br>
-			<select class="form-select" aria-label="Default select example">
-	  			<option selected>Выберите пункт ...</option>
-				<option value="1">One</option>
-				<option value="2">Two</option>
-				<option value="3">Three</option>
+			<select name="type" class="form-select" id="siteType" aria-label="Default select example">
+				<option value="Сайт-визитка">Сайт-визитка</option>
+				<option value="Лендинг">Лендинг</option>
+				<option value="Интернет-магазин">Интернет-магазин</option>
+				<option value="Социальная сеть">Социальная сеть</option>
 			</select>
 					
 			<b>ДИЗАЙН</b>
-			<select class="form-select" aria-label="Default select example">
-	  			<option selected>Выберите пункт ...</option>
-				<option value="1">One</option>
-				<option value="2">Two</option>
-				<option value="3">Three</option>
+			<select name="design" class="form-select" id="siteDesign" aria-label="Default select example">		
+				<option value="Шаблонный дизайн">Шаблонный дизайн</option>
+				<option value="Уникальный дизайн">Уникальный дизайн</option>
+				<option value="Wow-дизайн">Wow-дизайн</option>
 			</select>
 					
 			<b>АДАПТИВНОСТЬ</b>
-			<select class="form-select" aria-label="Default select example">
-	  			<option selected>Выберите пункт ...</option>
-				<option value="1">One</option>
-				<option value="2">Two</option>
-				<option value="3">Three</option>
+			<select name="adapting" class="form-select" id="siteAdapt" aria-label="Default select example">
+				<option value="Адаптивный дизайн">Адаптивный</option>
+				<option value="Неадаптивный дизайн">Неадаптивный</option>
 			</select>
 			<br>
 			<div class="just_line"></div> <!-- Просто линия  -->
 			<br>
 			<div class="block">
 				<div class="roww">
-					<div class="coll"><b>Сроки</b></div>
-					<div class="coll"><b>0</b></div>
+					<div class="coll"><b>Сроки (дн)</b></div>
+					<div class="coll" id="js-result-1"><b>0</b></div>
 				</div> 
 			</div>
 			<div class="block">
 				<div class="roww">
-					<div class="coll"><b>Стоимость</b></div>
-					<div class="coll"><b>0</b></div>
+					<div class="coll"><b>Стоимость (руб)</b></div>
+					<div class="coll" id="js-result-2"><b>0</b></div>
 				</div> 
 			</div>
 			<br>
 			<div align="center">
-				<input class="VISIT_LIVE_SITE" type="button" value="Оставить заявку">
+				<input class="VISIT_LIVE_SITE" id="js-button" type="button" value="Посчитать">
+			</div>
+			<br>
+
+			<!-- Button trigger modal -->
+			<div align="center">
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch demo modal
+				</button>
+			</div>
+
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  				<div class="modal-dialog">
+    				<div class="modal-content">
+      					<div class="modal-header">
+        					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+        					</button>
+      					</div>
+      					<div class="modal-body">
+        				...
+      					</div>
+      					<div class="modal-footer">
+        					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        					<button type="button" class="btn btn-primary">Save changes</button>
+      					</div>
+    				</div>
+  				</div>
 			</div>
 		</div>
 	</form>
-
 </section>
 
 <!-- ------------------------------- 5 страница - Статистика  ------------------------------------------- -->    
-<section class="fifth_page">
+<section class="fifth_page section" id="statistic">
 	<h3>НЕМНОГО СТАТИСТИКИ</h3>
 	<img class="poloska" src="img/line.png" alt="">
 	<ul>
-		<li><img src="img/smile.png" alt=""><br><h4>120</h4>Счастливых клиентов</li>
-		<li><img src="img/skobki.png" alt=""><br><h4>4,600</h4>Часов работы</li>
-		<li><img src="img/galka.png" alt=""><br><h4>340</h4>Проектов завершено</li>
-		<li><img src="img/kubok.png" alt=""><br><h4>23</h4>Наград получено</li>
+		<li><img src="img/smile.png" alt=""><br><h4 class="animate_stat" data-count="120">0</h4>Счастливых клиентов</li>
+		<li><img src="img/skobki.png" alt=""><br><h4 class="animate_stat" data-count="4600">0</h4>Часов работы</li>
+		<li><img src="img/galka.png" alt=""><br><h4 class="animate_stat" data-count="340">0</h4>Проектов завершено</li>
+		<li><img src="img/kubok.png" alt=""><br><h4 class="animate_stat" data-count="23">0</h4>Наград получено</li>
 	</ul>
 </section>
 
 <!-- -------------------------------  6 страница - Отзывы ----------------------------------------------- -->   
-<section class="sixth_page" id="feedback">
+<section class="sixth_page section" id="feedback">
 	<h3>ОТЗЫВЫ</h3>
-	<img class="poloska" src="img/line.png" alt=""><br><br><br>
-	<img src="img/fotka.png" alt="">
-	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At pariatur alias nisi doloribus saepe
-		omnis nemo quas molestiae mollitia repudiandae autem nihil sint cum natus officiis, maxime aut aliquam voluptatibus asperiores sunt minus. Minima alias vitae quisquam delectus accusantium, sapiente.
-		<br><br>
-		<b>Михаил,</b> Ген директор ПАО "Газпром"	
-	</p>
-	<ul>
-		<li><img src="img/ball1.png" alt=""></li>
-		<li><img src="img/ball2.png" alt=""></li>
-		<li><img src="img/ball2.png" alt=""></li>
-	</ul>
+	<img class="poloska" src="img/line.png" alt=""><br><br>
+  	<div class="fotorama" align="center" data-arrows="false" data-loop="true">
+  		<div>
+  			<img src="img/fotka.png">
+  			<br><br><br>
+  			<p>Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam inventore eius illum nulla molestias hic rerum sunt tempora cumque in? Accusantium similique a, voluptas expedita unde excepturi, iusto officia! Debitis.</p>
+  			<p><b>Михаил,</b>   Ген. директор ПАО "ГАЗПРОМ".</p>
+  		</div>
+  		<div>
+  			<img src="img/fotka.png">
+  			<br><br><br>
+  			<p>Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam inventore eius illum nulla molestias hic rerum sunt tempora cumque in? Accusantium similique a, voluptas expedita unde excepturi, iusto officia! Debitis.</p>
+  			<p><b>Михаил,</b>   Ген. директор ПАО "ГАЗПРОМ".</p>
+  		</div>
+  		<div>
+  			<img src="img/fotka.png">
+  			<br><br><br>
+  			<p>Lorem, ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam inventore eius illum nulla molestias hic rerum sunt tempora cumque in? Accusantium similique a, voluptas expedita unde excepturi, iusto officia! Debitis.</p>
+  			<p><b>Михаил,</b>   Ген. директор ПАО "ГАЗПРОМ".</p>
+  		</div>
+  	</div>			
 </section>
 
 <!-- ------------------------------- 7 страница - Контакты ---------------------------------------------- -->
 
-<section class="seventh_page" id="contacts">
+<section class="seventh_page section" id="contacts">
 	<h3>МОИ КОНТАКТЫ</h3>
 	<img class="poloska" src="img/line.png" alt=""><br>
 	<p>Lorem ipsum, sit, amet consectetur adipisicing elit. Neque, similique? Cupiditate cumque incidunt fuga?</p>
@@ -295,7 +372,9 @@
 <!-- --------------------------------------------------------------------------------------------------- -->
 </main>
 <script src="js/jquery-3.6.0.min.js"></script>
-<script src="js/myScript.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+<script src="js/myScript.js"></script>
 </body>
 </html>
