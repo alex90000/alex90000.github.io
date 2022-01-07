@@ -1,0 +1,837 @@
+@font-face {
+	font-family: 'FranklinGot';
+	src: url('../fonts/framd.eot');
+	src: local('☺'), url('../fonts/framd.woff') format('woff'), 
+					 url('../fonts/framd.ttf') format('truetype'), 
+					 url('../fonts/framd.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body{
+	font-family: Arial, sans-serif;
+}
+
+main{
+	width: 100%;
+	height: 100%;
+}
+
+.poloska{/* Класс для оранжевой полоски на страницах с параллакс эффектом*/
+	width: 55px;
+	height: 2px;
+}
+
+/*--------------------------------------------------------------------------------*/
+
+
+/*Стили для всплывающего модального окна*/
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 999;
+    -webkit-animation: fade .6s;
+    -moz-animation: fade .6s;
+    animation: fade .6s;
+    overflow: auto;
+}
+
+.popup {
+    top: 25%;
+    left: 0;
+    right: 0;       
+    font-size: 14px;
+    margin: auto;
+    width: 85%;
+    min-width: 320px;
+    max-width: 600px;
+    position: absolute;
+    padding: 15px 20px;
+    border: 1px solid #383838;
+    background: #fefefe;
+    z-index: 1000;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    font: 14px/18px 'Tahoma', Arial, sans-serif;
+    -webkit-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -moz-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -ms-box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    box-shadow: 0 15px 20px rgba(0,0,0,.22),0 19px 60px rgba(0,0,0,.3);
+    -webkit-animation: fade .6s;
+    -moz-animation: fade .6s;
+    animation: fade .6s;
+    text-align: center;
+}
+
+.popup input[type=text] {/*Поле для ввода имени*/
+	height: 30px;
+	width: 370px;
+	background-color: #d3d6dc;
+	color: #676768;
+	font-size: 13px;
+	padding: 0px 16px;
+	margin: 50px 14px 0px 14px;
+}
+
+.popup input[type=email]{/*Поле для ввода почты*/
+	height: 30px;
+	width: 370px;
+	background-color: #d3d6dc;
+	color: #676768;
+	font-size: 13px;
+	padding: 0px 16px;
+	margin: 10px 14px 0px 14px;
+}
+
+.popup input[type=submit]{/*Кнопка отправить*/
+	height: 45px;
+	width: 125px;
+	margin-top: 20px;
+	text-align: center;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	font-size: 17px;
+	color: black;
+	transition: all 0.5s;
+	box-shadow: 5px 5px 0 #235;
+}
+
+.popup input[type=submit]:hover{
+	background: orange;
+	color: white;
+	left: 5px;
+    top: 5px;
+    box-shadow: 0 0 0 #000;
+}
+
+.close {
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    border: none;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    background-color: rgba(0, 131, 119, 0.9);
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    outline: none;
+ 
+}
+.close:before {
+    color: rgba(255, 255, 255, 0.9);
+    content: "X";
+    font-family:  Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+/* кнопка закрытия при наведении */
+.close:hover {
+    background-color: rgba(252, 20, 0, 0.8);
+}
+
+/*-------------------------------------------------------------------------------------*/
+
+
+/* Прелоадер - загрузчик сайта*/
+.loader {
+    background: #000;
+    background: radial-gradient(#222, #000);
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 99;
+}
+
+.loader-inner {
+    bottom: 0;
+    height: 60px;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+
+.loader-line-wrap {
+    animation: 
+		spin 2000ms cubic-bezier(.175, .885, .32, 1.275) infinite
+	;
+    box-sizing: border-box;
+    height: 50px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    transform-origin: 50% 100%;
+    width: 100px;
+}
+.loader-line {
+    border: 4px solid transparent;
+    border-radius: 100%;
+    box-sizing: border-box;
+    height: 100px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100px;
+}
+.loader-line-wrap:nth-child(1) { animation-delay: -50ms; }
+.loader-line-wrap:nth-child(2) { animation-delay: -100ms; }
+.loader-line-wrap:nth-child(3) { animation-delay: -150ms; }
+.loader-line-wrap:nth-child(4) { animation-delay: -200ms; }
+.loader-line-wrap:nth-child(5) { animation-delay: -250ms; }
+
+.loader-line-wrap:nth-child(1) .loader-line {
+    border-color: hsl(0, 80%, 60%);
+    height: 90px;
+    width: 90px;
+    top: 7px;
+}
+.loader-line-wrap:nth-child(2) .loader-line {
+    border-color: hsl(60, 80%, 60%);
+    height: 76px;
+    width: 76px;
+    top: 14px;
+}
+.loader-line-wrap:nth-child(3) .loader-line {
+    border-color: hsl(120, 80%, 60%);
+    height: 62px;
+    width: 62px;
+    top: 21px;
+}
+.loader-line-wrap:nth-child(4) .loader-line {
+    border-color: hsl(180, 80%, 60%);
+    height: 48px;
+    width: 48px;
+    top: 28px;
+}
+.loader-line-wrap:nth-child(5) .loader-line {
+    border-color: hsl(240, 80%, 60%);
+    height: 34px;
+    width: 34px;
+    top: 35px;
+}
+
+@keyframes spin {
+    0%, 15% {
+		transform: rotate(0);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.preloader-remove {
+	transition: 2s;
+    opacity: 0;
+    z-index: -10;
+}
+/*------------------------------------------*/
+
+/* Навигационная панель */
+
+nav{
+	width: 100%;
+	height: 60px;
+	background: #344051;
+	position: fixed;
+	z-index: 10;
+}
+
+.white-btn:visited{
+	color: white;
+}
+
+.logo{
+	font-family: 'FranklinGot';
+	color: #fff;
+	font-size: 25px;
+	line-height: 60px;
+	float: left;
+	animation: coming 4s ease;
+}
+
+.menu{
+	float: left;
+}
+
+.menu li{
+	float: left;
+	line-height: 60px;
+	/*color: #fff;*/
+	margin-right: 15px;
+	font-size: 14px;
+	text-transform: uppercase;
+	animation: topshift 0.4s ease forwards;
+	opacity: 0;
+}
+
+.menu li:nth-child(2){
+	animation-delay: 0.5s;
+}
+
+.menu li:nth-child(3){
+	animation-delay: 1.0s;
+}
+
+.menu li:nth-child(4){
+	animation-delay: 1.5s;
+}
+
+.menu li:nth-child(5){
+	animation-delay: 2.0s;
+}
+
+.menu li:nth-child(6){
+	animation-delay: 2.5s;
+}
+
+.menu li:nth-child(7){
+	animation-delay: 3.0s;
+}
+
+.menu li:nth-child(8){
+	animation-delay: 3.5s;
+}
+
+.menu li:nth-child(9){
+	animation-delay: 4.0s;
+}
+
+.menu li a{
+	display: inline-block;
+	color: white;
+	transition: all 0.5s;
+	transform: scale(1);
+	text-decoration: none;
+}
+
+.menu li a:visited{
+	color: white;
+}
+
+.menu li a:hover{
+	color: orange;
+}
+
+.menu li a:active{
+	transform: scale(1.7);
+	color: red;
+}
+
+.menu .active{
+	background-color: yellow;
+	/*color: yellow !important; - это чтобы перебить бустрап по цвету текста*/
+}
+
+@keyframes coming{
+	from{
+		opacity: 0;
+	}
+
+	to{
+		opacity: 1;
+	}
+}
+
+@keyframes topshift{
+	from{
+		opacity: 0;
+		margin-top: -80px;
+	}
+
+	to{
+		opacity: 1;
+		margin-top: 0px;
+	}
+}
+
+/*-----------------------------------*/
+
+/*Контейнер-пустышка, чтобы фон не залазил под nav*/
+
+.pustyshka{
+	width: 100%;
+	height: 60px;
+}
+
+/*------------------------------------*/
+
+/* 1 страница - Представление*/
+
+.main{ 
+	width: 100%;
+	height: 700px;
+	background: url(../img/man.png) 90% 100%/auto 90% no-repeat, 
+				url(../img/bg.jpg) 0 0/cover no-repeat;
+}
+
+.title_container{
+	float: left;
+	color: #2c384a;
+	text-align: center;
+	width: 100%;
+	opacity: 0;
+	/*animation: titlemove 1s ease forwards;
+	animation-delay: 3s;*/
+}
+
+.element_animation.show_animation{
+	animation: titlemove 1s ease forwards;
+}
+
+.title_container h1{
+	font-family: Arial, sans-serif;
+	font-size: 65px;
+	font-weight: bold;
+}
+
+.title_container h4{
+	margin-top: 20px;
+	font-size: 20px;
+	color: #79818d;
+}
+
+.title_container input{
+	height: 40px;
+	text-align: center;
+	border: 2px solid #6d7682;
+	background: none;
+	border-radius: 5px;
+	color: #6d7682;
+	font-size: 13px;
+	padding: 0px 16px;
+	margin: 50px 14px 0px 14px;
+	transition: all 0.5s;
+	box-shadow: 5px 5px 0 #000;
+}
+
+.title_container input:hover{
+	background: orange;
+	color: white;
+	left: 5px;
+    top: 5px;
+    box-shadow: 0 0 0 #000;
+}
+
+.title_container input:active{
+	transform: scale(1.5);
+}
+
+.custom-css3{
+	font-size: 40px;
+}
+
+@keyframes titlemove{
+	from{
+		opacity: 0;
+		margin-left: -500px;
+	}
+
+	to{
+		opacity: 1;
+		margin-left: 0%;
+	}
+}
+
+@media (max-width: 990px){
+	.title_container, .title_container h4, .title_container input{
+		color: white;
+		position: relative;
+		z-index: 3;
+	}
+
+	.title_container input{
+		border: 2px solid white;
+	}
+
+	.main{
+		position: relative;
+	}
+
+	.main::after {
+		content: "";
+		bottom: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		position: absolute;
+		background: rgba(0,0,0,0.4); 
+	}
+}
+
+/*-----------------------------------*/
+
+/* 2 страница - Обо мне*/
+
+.second_page{
+	width: 100%;
+	height: 550px;
+	text-align: center;
+}
+
+.second_page h3{ /*Заголовок "Обо мне"*/
+	margin-top: 80px;
+	font-weight: bold;
+	color: #263244;
+}
+
+.second_page p{ /*Текст-рыба*/
+	font-weight: bold;
+	color: #3f495a;
+	text-align: left;
+}
+
+.second_page input{/*Кнопка скачать резюме*/
+	text-align: center;
+	border: 2px solid #6d7682;
+	background: none;
+	border-radius: 5px;
+	color: #6d7682;
+	font-size: 13px;
+	padding: 0px 16px;
+	transition: all 0.5s;
+	box-shadow: 5px 5px 0 #000;
+}
+
+.second_page input:hover{
+	background: orange;
+	color: white;
+	left: 5px;
+    top: 5px;
+    box-shadow: 0 0 0 #000;
+}
+
+.second_page input:active{
+	transform: scale(1.5);
+}
+/*-----------------------------------*/
+
+/* 3 страница - Что я умею*/
+
+.third_page{
+	width: 100%;
+	height: 500px;
+	background: url(../img/fon.jpg) 0 0/100% 100% no-repeat;
+	/*background-attachment: fixed;*/
+	text-align: center;
+}
+
+.third_page h3{ /*Заголовок "Что я умею*/
+	padding-top: 80px;
+	font-weight: bold;
+	color: #263244;
+}
+
+.third_page img{
+    transition: 1s; /* Время анимации */
+}
+
+.third_page ul{
+	margin-top: 100px;
+	display: flex;
+}
+
+.third_page li{
+	float: left;
+	font-size: 15px;
+}
+
+.third_page h4{
+	color: #cf7600;
+	font-size: 15px;
+	font-weight: bold;
+}
+
+.third_page img:hover {
+    transform: scale(1.5); /* Масштабирование на 50% */
+   }
+/*-----------------------------------*/
+
+/* 4 страница - Кейсы*/
+
+.fourth_page{
+	width: 100%;
+	height: 1700px;
+}
+
+.hat{
+	text-align: center;
+}
+
+.hat h3{
+	margin-top: 80px;
+	font-weight: bold;
+}
+
+.fourth_page p{/*Текст-рыба*/
+	margin-top: 10px;
+	font-weight: bold;
+	color: #626976;
+}
+
+.fourthPagefirstlist{
+	color: #38485a;
+}
+
+.fourthPagefirstlist b{
+	font-size: 20px;
+}
+
+.VISIT_LIVE_SITE{/*Кнопка VISIT LIVESITE*/
+	width: 200px;
+	height: 40px;
+	text-align: center;
+	background: #63b5ae;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 15px;
+	padding: 0px 16px;
+	transition: all 0.5s;
+	box-shadow: 5px 5px 0 #000;
+}
+
+.myForm{
+	border-radius: 5px;
+	border: 3px solid black;
+}
+
+.fourth_page select{
+	margin: 10px 0 10px 0;
+	width: 100%;
+	height: 50px;
+	background-color: #eeeeee;
+	color: #7d7d7d;
+	padding: .75rem 2.5rem .75rem 1rem;
+}
+
+.just_line{/*Полоска внизу*/
+	width: 100%;
+	height: 4px;
+	background-color: #eeeeee;
+}
+
+.fourth_page .roww{
+	display: flex;
+	justify-content: space-between;
+}
+
+.fourth_page input[type=button]{
+	text-align: center;
+}
+
+.fourth_page input:hover{
+	background: orange;
+	color: white;
+	left: 5px;
+    top: 5px;
+    box-shadow: 0 0 0 #000;
+}
+
+.fourth_page input:active{
+	transform: scale(1.5);
+}
+
+/*-----------------------------------*/
+
+/* 5 страница - Статистика*/
+.fifth_page{
+	width: 100%;
+	height: 400px;
+	background: url(../img/secondfon.jpg) 0 0/100% 100% no-repeat;
+	/*background-attachment: fixed;*/
+	text-align: center;
+}
+
+.fifth_page h3{
+	padding-top: 80px;
+	font-weight: bold;
+	color: #263244;
+}
+
+.fifth_page ul{
+	margin-top: 5%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.fifth_page li{
+	float: left;
+	font-size: 15px;
+}
+
+.fifth_page h4{
+	color: #1c2534;
+	font-size: 40px;
+	font-weight: bold;
+}
+/*-----------------------------------*/
+
+/* 6  страница - Отзывы*/
+
+.sixth_page{
+	width: 100%;
+	height: 420px;
+	text-align: center;
+}
+
+.sixth_page h3{
+	margin-top: 80px;
+	font-weight: bold;
+	color: #263244;
+}
+
+.fotorama__stage{
+	height: 250px !important;
+}
+
+/*-------------------------------------------------------------------------------------------*/
+
+/* 7 страница - Контакты*/
+.seventh_page{
+	width: 100%;
+	height: 800px;
+	background: url(../img/fon3.jpg) 0 0/100% 100% no-repeat;
+	text-align: center;
+}
+
+.seventh_page h3{/*Мои контакты*/
+	padding-top: 80px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.seventh_page p{/*Текст-рыба*/
+	color: white;
+	margin-top: 40px;
+}
+
+.seventhPageFirstList{/*1 список - Санкт-Петербург Невский проспект 11*/
+	padding: 0px 260px 0px 280px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.seventhPageFirstList li{/*Элементы 1ого списка*/
+	color: white;
+}
+
+
+.seventh_page h5{/*ОСТАВЬТЕ МНЕ СООБЩЕНИЕ*/
+	color: #fff;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.seventh_page input[type=text] {/*Поле для ввода имени*/
+	height: 30px;
+	width: 370px;
+	background-color: #d3d6dc;
+	color: #676768;
+	font-size: 13px;
+	padding: 0px 16px;
+	margin: 50px 14px 0px 14px;
+}
+
+.seventh_page input[type=email]{/*Поле для ввода почты*/
+	height: 30px;
+	width: 370px;
+	background-color: #d3d6dc;
+	color: #676768;
+	font-size: 13px;
+	padding: 0px 16px;
+	margin: 50px 14px 0px 14px;
+}
+
+.seventh_page textarea{/*Поле для ввода сообщения*/
+	height: 100px;
+	width: 772px;
+	background-color: #d3d6dc;
+	color: #676768;
+	font-size: 13px;
+	padding: 8px 0px 0px 16px;
+	margin: 10px 14px 0px 14px;
+}
+
+.seventh_page button{/*Кнопка отправить*/
+	height: 45px;
+	width: 125px;
+	margin-top: 20px;
+	text-align: center;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	font-size: 17px;
+	background: none;
+	color: #fff;
+	transition: all 0.5s;
+	box-shadow: 5px 5px 0 #000;
+}
+
+.seventhPageSecondList{/*2 список - Соцсети*/
+	margin: 100px 0px 0px 470px;
+}
+
+.seventhPageSecondList li{/*Элементы 2ого списка*/
+	margin-left: 30px;
+	float: left;
+}
+
+.seventh_page input:focus{
+	border: 3px solid green;
+	box-shadow: 0px 0px 20px red;
+}
+
+.seventh_page textarea:focus{
+	border: 3px solid green;
+	box-shadow: 0px 0px 20px red;
+}
+
+.seventh_page button:hover{
+	background: orange;
+	color: white;
+	left: 5px;
+    top: 5px;
+    box-shadow: 0 0 0 #000;
+}
+
+.seventh_page button:active{
+	transform: scale(1.5);
+}
+/*-----------------------------------*/
+
+/* 8 страница - Карты + Автор*/
+ .author{  
+    width: 100%;
+	height: 70px;
+	background: #354051;
+	color: #fff;
+	line-height: 60px;
+	padding-left: 40%;
+}
+/*-----------------------------------*/
